@@ -30,8 +30,6 @@ export class RichTextComponent {
     return '';
   }
 
-  uniqueId = `editor${Math.floor(Math.random() * 1000000)}`;
-
   private stringTools = {
     isNullOrWhiteSpace: (value: string) => {
       if (value == null || value == undefined) {
@@ -47,10 +45,6 @@ export class RichTextComponent {
   private updateItem() {
     const element = this.editor.nativeElement as HTMLDivElement;
     element.innerHTML = this.formControlItem.value;
-
-    // if (element.innerHTML === null || element.innerHTML === '') {
-    //   element.innerHTML = '<div></div>';
-    // }
 
     const reactToChangeEvent = () => {
 
